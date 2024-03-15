@@ -31,10 +31,11 @@ def main():
             choice = make_move(board)
 
             # example about logs
-            print(f"I moved {choice}\n")
+            print(f"I moved {choice}")
             # example about posting a move
-            print(f"MOVE: {choice}\n")
+            print(f"MOVE: {choice}")
         else:
+            print("Unknown tag!")
             break
 
 if __name__ == "__main__":
