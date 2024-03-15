@@ -23,8 +23,9 @@ def main():
         if opponent_move.startswith("BOARD: "):
             set_board(board, opponent_move.removeprefix("BOARD: "))
         elif opponent_move.startswith("START: "):
+            board.clear()
+            print("Started a new game!")
             choice = make_move(board)
-            print("Started new game!")
             print(f"MOVE: {choice}")
         elif opponent_move.startswith("MOVE: "):
             board.push_uci(opponent_move.removeprefix("MOVE: "))
