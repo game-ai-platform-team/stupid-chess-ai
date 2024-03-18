@@ -8,6 +8,7 @@ def set_board(board: chess.Board, board_position:str):
 
 def make_move(board: chess.Board):
     legal_moves = [move.uci() for move in list(board.legal_moves)]
+    print(f"I found {len(legal_moves)} legal moves: {', '.join(legal_moves)}")
     choice = random.choice(legal_moves)
     board.push_uci(choice)
 
@@ -32,7 +33,7 @@ def main():
             choice = make_move(board)
 
             # example about logs
-            print(f"I moved {choice}")
+            print(f"I chose {choice}!")
             # example about posting a move
             print(f"MOVE: {choice}")
         else:
