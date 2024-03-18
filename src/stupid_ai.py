@@ -1,9 +1,9 @@
 import random
 import chess
 import time
-import random
 
 def set_board(board: chess.Board, board_position:str):
+    print(f"Set board to {board_position}!")
     board.set_fen(board_position)
 
 def make_move(board: chess.Board):
