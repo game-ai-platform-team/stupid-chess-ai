@@ -21,23 +21,23 @@ def main():
     while True:
         opponent_move = input()
         time.sleep(random.randrange(1,10)/100)
-        if opponent_move.startswith("BOARD: "):
-            set_board(board, opponent_move.removeprefix("BOARD: "))
-        elif opponent_move.startswith("START: "):
+        if opponent_move.startswith("BOARD:"):
+            set_board(board, opponent_move.removeprefix("BOARD:"))
+        elif opponent_move.startswith("RESET:"):
             board.reset()
-            print("Started a new game!")
+            print("Board reset!")
+        elif opponent_move.startswith("PLAY:"):
             choice = make_move(board)
-            print(f"MOVE: {choice}")
-        elif opponent_move.startswith("MOVE: "):
-            board.push_uci(opponent_move.removeprefix("MOVE: "))
-            choice = make_move(board)
-
             # example about logs
             print(f"I chose {choice}!")
             # example about posting a move
             print(f"MOVE: {choice}")
+        elif opponent_move.startswith("MOVE:"):
+            move = opponent_move.removeprefix("MOVE:")
+            board.push_uci(move)
+            print(f"Recieved move: {move}")
         else:
-            print("Unknown tag!")
+            print(f"Unknown tag: {opponent_move}")
             break
 
 if __name__ == "__main__":
