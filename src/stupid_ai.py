@@ -35,7 +35,7 @@ def main():
         elif opponent_move.startswith("MOVE:"):
             move = opponent_move.removeprefix("MOVE:")
             board.push_uci(move)
-            print(f"Recieved move: {move}")
+            print(f"Received move: {move}")
         else:
             print(f"Unknown tag: {opponent_move}")
             break
