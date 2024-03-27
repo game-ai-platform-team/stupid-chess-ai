@@ -31,7 +31,7 @@ def main():
             # example about logs
             print(f"I chose {choice}!")
             # example about posting a move
-            print(f"MOVE: {choice}")
+            print(f"MOVE:{choice}")
         elif opponent_move.startswith("MOVE:"):
             move = opponent_move.removeprefix("MOVE:")
             board.push_uci(move)
